@@ -9,7 +9,7 @@ import {
     Play,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { NextSeo } from 'next-seo';
+// import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 
 // Video file paths from the public folder
@@ -255,7 +255,7 @@ const VFXPortfolio = () => {
 
     return (
         <div ref={containerRef} className="bg-gray-900 text-white overflow-hidden">
-            <NextSeo
+            {/* <NextSeo
                 title="Srijan VFX Portfolio"
                 description="Showcasing stunning visual effects projects by Srijan VFX. Explore our VFX artistry in films, commercials, and more."
                 canonical="https://srijanvfx.com"
@@ -273,7 +273,7 @@ const VFXPortfolio = () => {
                     ],
                 }}
             // keywords={['Srijan VFX', 'VFX portfolio', 'visual effects', 'VFX artist', 'film VFX', 'commercial VFX', '3D animation', 'compositing', 'India VFX']}
-            />
+            /> */}
             {/* Header */}
             <header className="absolute top-0 left-0 right-0 z-50 bg-transparent py-6 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
