@@ -5,19 +5,10 @@ import {
     Menu,
     X,
     Mail,
-    Linkedin,
     ArrowUpRight,
     Play,
-    Github,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip"
-import { cn } from '@/lib/utils';
 import { NextSeo } from 'next-seo';
 
 // Video file paths from the public folder
@@ -226,7 +217,7 @@ const VFXPortfolio = () => {
             const sections = containerRef.current.querySelectorAll('section');
             const navLinks = document.querySelectorAll('nav a');
 
-            let currentSectionId = '';
+            // let currentSectionId = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
@@ -241,7 +232,7 @@ const VFXPortfolio = () => {
                 //     link.classList.add('active');
                 // }
             });
-            setActiveSection(currentSectionId);
+            // setActiveSection(currentSectionId);
         }
     }, []);
 
@@ -533,7 +524,7 @@ const VFXPortfolio = () => {
                                     rel="noopener noreferrer"
                                     className="text-blue-400 hover:text-blue-300 transition-colors duration-300 inline-flex items-center"
                                 >
-                                    <Linkedin className="w-6 h-6 mr-2" />
+                                    {/* <Linkedin className="w-6 h-6 mr-2" /> */}
                                     LinkedIn
                                 </a>
                             </div>
