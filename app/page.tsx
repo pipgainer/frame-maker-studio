@@ -10,12 +10,13 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 
 // Video file paths from the public folder
 const videoFilePaths = [
     '/videos/car.mp4',
     '/videos/compositing_showreel.mp4',
-    '/videos/eye_hole_cg.mov',
+    '/videos/face_touchup.mp4',
     '/videos/face_touchup.mp4',
     '/videos/reel.mp4',
     '/videos/srk_zero.mp4',
@@ -105,10 +106,10 @@ const itemVariants = {
     },
 };
 
-const fadeInVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1, ease: 'easeInOut' } },
-};
+// const fadeInVariants = {
+//     hidden: { opacity: 0 },
+//     visible: { opacity: 1, transition: { duration: 1, ease: 'easeInOut' } },
+// };
 
 // Reusable Video Player Component
 const VideoPlayer = ({ src, title }: { src: string, title: string }) => {
@@ -217,22 +218,22 @@ const VFXPortfolio = () => {
             const sections = containerRef.current.querySelectorAll('section');
             const navLinks = document.querySelectorAll('nav a');
 
-            // let currentSectionId = '';
+            let currentSectionId = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
                 if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
-                    // currentSectionId = section.getAttribute('id');
+                    currentSectionId = section.getAttribute('id') || '';
                 }
             });
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                // if (link.getAttribute('href').slice(1) === currentSectionId) {
-                //     link.classList.add('active');
-                // }
+                if (link.getAttribute('href')!.slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
             });
-            // setActiveSection(currentSectionId);
+            setActiveSection(currentSectionId);
         }
     }, []);
 
@@ -323,7 +324,7 @@ const VFXPortfolio = () => {
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-lg"
                     >
-                        Hello, I'm{' '}
+                        Hello, I&apos;m {` `}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                             Srijan
                         </span>
@@ -458,8 +459,10 @@ const VFXPortfolio = () => {
                             className="rounded-xl overflow-hidden shadow-2xl border border-gray-700"
                         >
                             {/* Replace with an actual image or video of yourself */}
-                            <img
+                            <Image
                                 src="https://placehold.co/600x400/000/fff/png?text=VFX+Artist"
+                                width={600}
+                                height={400}
                                 alt="Your Name"
                                 className="w-full h-auto"
                             />
